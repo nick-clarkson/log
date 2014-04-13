@@ -1,4 +1,17 @@
-name: Nick Clarkson
+name: How to frontend
 markdown: redcarpet
 pygments: true
 baseurl: ""
+gems:
+- jekyll-compass
+navigation:
+- text: About
+  url: /about.html
+- text: Getting Started
+  url: /basis.html
+# - text: Projects
+#   url: /en/projects/
+#   layout: project
+# - text: Blog
+#   url: /en/blog/
+#   layout: post

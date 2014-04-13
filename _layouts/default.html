@@ -14,22 +14,48 @@
         <header>
           <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
           <nav>
-            <a href="{{ site.baseurl }}/">Home</a>
-            <a href="{{ site.baseurl }}/music.html">Music</a>
+            <ul>
+              {% for link in site.navigation %}
+                {% assign current = nil %}
+                {% if page.url == link.url or page.layout == link.layout %}
+                  {% assign current = 'current' %}
+                {% endif %}
+
+                <li class="{% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
+                  <a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
+                </li>
+              {% endfor %}
+            </ul>
           </nav>
         </header>
 
+        <hr />
+
         {{ content }}
 
-        <hr>
+        <hr />
 
         <footer>
-          <p>
+<!--           <p>
             <strong>Nick Clarkson</strong><br />
-            Head of Technology at <a href="http://goramandvincent.com">G+V</a><br />
-            <a href="https://github.com/nick-clarkson">github.com/nick-clarkson</a><br />
-            <a href="https://twitter.com/t_pk">twitter.com/t_pk</a><br />
+            Dad to Dan and Alex, husband of @<a href="">tiny_teapot</a>
+            By day Head of Technology at <a href="http://goramandvincent.com">G+V</a>,
+            By night I am a <a href="http://mixcloud.com/trialanderror">bedroom DJ</a>
+            and drummer of <a href="http://slowmusic.co.uk">Slow</a>.
           </p>
+
+          <p>See you round:</p>
+
+          <ul>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">LinkedIn</a></li>
+            <li><a href="">SoundCloud</a></li>
+            <li><a href="">MixCloud</a></li>
+          </ul> -->
+
+          <p>Built with <a href="#">Jekyll</a></p>
+
         </footer>
       </article>
 
