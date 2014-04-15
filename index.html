@@ -4,7 +4,7 @@ title: Home
 ---
 
 
-  <aside>
+  <section>
   <h1>Posts</h1>
 
     {% for post in site.posts %}
@@ -13,10 +13,10 @@ title: Home
           <header>
             {{ post.date | date_to_string }}
             <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-            <p>{{ post.excerpt }}</p>
           </header>
+          <p role="main">{{ post.excerpt }}</p>
         </article>
-  
+
     {% endfor %}
 
-  </aside>
+  </section>

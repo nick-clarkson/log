@@ -1,4 +1,4 @@
-name: How to frontend
+name: Style Guide
 markdown: redcarpet
 pygments: true
 baseurl: ""
@@ -7,11 +7,5 @@ gems:
 navigation:
 - text: About
   url: /about.html
-- text: Getting Started
-  url: /basis.html
-# - text: Projects
-#   url: /en/projects/
-#   layout: project
-# - text: Blog
-#   url: /en/blog/
-#   layout: post
+- text: Resources
+  url: /resources.html

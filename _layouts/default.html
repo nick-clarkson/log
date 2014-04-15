@@ -7,56 +7,65 @@
       <meta name="viewport" content="width=device-width">
       <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
       <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      <style>
+        html{
+          background: #e6e6e6;
+          font-family: 'Open Sans', sans-serif;
+          color: #111;
+        }
+        body{
+          margin: 0;
+          padding: 0;
+        }
+        .wrapper{
+          background: #fff;
+          padding: 20px;
+        }
+        .footer{
+          padding: 20px;
+        }
+        a{
+          color: #06c;
+        }
+        a:hover{
+          text-decoration: none;
+        }
+        .footer img{
+          float: right;
+        }
+      </style>
     </head>
     <body>
 
       <article>
-        <header>
-          <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-          <nav>
-            <ul>
-              {% for link in site.navigation %}
-                {% assign current = nil %}
-                {% if page.url == link.url or page.layout == link.layout %}
-                  {% assign current = 'current' %}
-                {% endif %}
+        <div class="wrapper">
+          <header class="header">
+            <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <nav>
+              <ul>
+                {% for link in site.navigation %}
+                  {% assign current = nil %}
+                  {% if page.url == link.url or page.layout == link.layout %}
+                    {% assign current = 'current' %}
+                  {% endif %}
+                  <li class="{% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
+                    <a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+          </header>
 
-                <li class="{% if forloop.first %}first{% endif %} {{ current }} {% if forloop.last %}last{% endif %}">
-                  <a class="{{ current }}" href="{{ link.url }}">{{ link.text }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </nav>
-        </header>
+          {{ content }}
 
-        <hr />
+        </div> <!-- //wrapper -->
 
-        {{ content }}
-
-        <hr />
-
-        <footer>
-<!--           <p>
-            <strong>Nick Clarkson</strong><br />
-            Dad to Dan and Alex, husband of @<a href="">tiny_teapot</a>
-            By day Head of Technology at <a href="http://goramandvincent.com">G+V</a>,
-            By night I am a <a href="http://mixcloud.com/trialanderror">bedroom DJ</a>
-            and drummer of <a href="http://slowmusic.co.uk">Slow</a>.
-          </p>
-
-          <p>See you round:</p>
-
-          <ul>
-            <li><a href="">Twitter</a></li>
-            <li><a href="">Instagram</a></li>
-            <li><a href="">LinkedIn</a></li>
-            <li><a href="">SoundCloud</a></li>
-            <li><a href="">MixCloud</a></li>
-          </ul> -->
-
-          <p>Built with <a href="#">Jekyll</a></p>
-
+        <footer class="footer">
+<!--           <p><img src="/images/whoooosh.png"></p> -->
+          <p><a href="http://jekyllrb.com/" target="_blank">Jekyll Docs</a></p>
         </footer>
+
       </article>
 
     </body>
